@@ -59,22 +59,5 @@ btnNew.addEventListener("click", setColors);
 btnEasy.addEventListener("click", changeDifficulty);
 btnHard.addEventListener("click", changeDifficulty);
 
-function changeDifficulty(){
-   if (squares.length > 3) {
-      container.textContent = "askdjas";
-      setColors();
-   }
-   else{
-      container.innerHTML = `<div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>
-      <div class="square"></div>`;
-      setColors();
-   }
-}
-
-
 
 setColors();
