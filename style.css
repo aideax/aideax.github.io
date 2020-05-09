@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body{
+    background-color: dimgray ;
+}
+
+
+
+.square{
+    width: 30%;
+    background-color: aquamarine;
+    padding-bottom: 30%;
+    margin: 1.5%;
+    float: left;
+}
