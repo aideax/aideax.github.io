@@ -1,19 +1,31 @@
-*{
+* {
     margin: 0;
     padding: 0;
     color: white;
+    font-family: 'Quicksand', sans-serif;
 }
 
-body{
-    background-color: dimgray ;
+body {
+    background-color: dimgray;
+}
+
+.header {
+    text-align: center;
+    text-transform: uppercase;
+
 }
 
 
-
-.square{
+.square {
     width: 30%;
     background-color: aquamarine;
     padding-bottom: 30%;
     margin: 1.5%;
     float: left;
 }
+
+.controls{
+    text-align: center;
+    width: 50%;
+}
+

@@ -56,8 +56,4 @@ for (let i = 0; i < squares.length; i++) {
 }
 
 btnNew.addEventListener("click", setColors);
-btnEasy.addEventListener("click", changeDifficulty);
-btnHard.addEventListener("click", changeDifficulty);
-
-
 setColors();
