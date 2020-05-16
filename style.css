@@ -1,46 +1,92 @@
 * {
     margin: 0;
     padding: 0;
-    color: white;
-    font-family: 'Quicksand', sans-serif;
+    border: 0;
+    font-family: Helvetica;
 }
 
-body {
-    background-color: dimgray;
+.container {
+    padding: 0;
+    margin: 0 auto;
+    margin-top: 5%;
+    width: 50%;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.205);
 }
 
 .header {
+    padding-left: 1rem;
+    background-color: #3776df;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    padding: 0;
     font-size: 1.5rem;
+    font-weight: normal;
+}
+
+#icon {
+    cursor: pointer;
+    float: right;
+    padding-right: .5rem;
+    font-size: 1rem;
+    line-height: 30px;
+}
+
+#input {
+    padding-left: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 24px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+li {
+    background: white;
+}
+
+li:nth-child(2n+0) {
+    background: rgba(194, 194, 194, 0.527);
+}
+
+.items {
+    list-style-type: none;
+}
+
+.todoItem {
+    line-height: 24px;
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 20px;
+}
+
+.delete {
+    float: right;
+    background-color: red;
+    color: white;
+    height: 24px;
     text-align: center;
-    text-transform: uppercase;
-    padding: 1rem;
+    width: 0;
+    opacity: 0;
+    transition: ease .2s;
+}
+
+.todoItem:hover .delete {
+    opacity: 1;
+    width: 35px;
+}
+
+.done {
+    text-decoration: line-through;
+    color: gray;
 }
 
 
-.square {
-    width: 30%;
-    background-color: aquamarine;
-    padding-bottom: 30%;
-    margin: 1.5%;
-    float: left;
-    transition: all 0.3s;
-}
 
-.controls{
-    text-align: center;
-    font-size: 1.5rem;
-    background-color: black;
-}
-
-.result{
-    display: inline-block;
-    width: 20%;
-}
-.btnDifficulty{
-    padding: 0 1.5rem;
-}
-
-.selected{
-    background-color: white;
-    color: black;
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 100%;
+    }
 }
