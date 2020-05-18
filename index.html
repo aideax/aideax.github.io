@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <script src="https://kit.fontawesome.com/bb5c676d7c.js" crossorigin="anonymous"></script>
-    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
-
 <body>
-
     <div class="container">
         <div class="header">
-            <h1>TO DO LIST<span id="icon"><i class="fas fa-plus"></i></span></h1>
+            <h1>Typing Test</h1>
         </div>
-        <div class="textInput">
-            <input id="input" placeholder="Test"></input>
+        <div class="testArea">
+            <div class="testContent">
+             <p id="toType"></p> 
+            </div>
+            <div class="typeArea">
+                <input type="text" id="input">
+                <button id="btnStart"> 1:00 </button>
+            </div>
         </div>
-        <div>
-            <ul class="items">
+        <div class="results">
+            <table>
+                <tr>
+                    <th>
+                        Characters Typed        
+                    </th>
+                    <td id="charTyped">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Errors
+                    </th>
+                    <td id="errors">
+                        Yes
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Total WPM
+                    </th>
+                    <td id="wpm">
+                        Yes
+                    </td>
+                </tr>
+            </table>
+            <ul class="errors">
+                <li></li>
             </ul>
         </div>
+        
     </div>
-    version 1.1.2
-    
     
 
-
-
-
-
-
-
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
-
 </html>

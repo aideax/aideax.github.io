@@ -1,92 +1,64 @@
-* {
+*{
     margin: 0;
     padding: 0;
-    border: 0;
-    font-family: Helvetica;
+    font-family: Arial, Helvetica, sans-serif;
 }
-
-.container {
-    padding: 0;
-    margin: 0 auto;
-    margin-top: 5%;
-    width: 50%;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.205);
-}
-
-.header {
-    padding-left: 1rem;
-    background-color: #3776df;
+.header{
+    background-color: #428bca;
     color: white;
-}
-
-h1 {
-    margin: 0;
-    padding: 0;
-    font-size: 1.5rem;
-    font-weight: normal;
-}
-
-#icon {
-    cursor: pointer;
-    float: right;
-    padding-right: .5rem;
-    font-size: 1rem;
-    line-height: 30px;
-}
-
-#input {
-    padding-left: 1rem;
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 24px;
-    padding-top: 4px;
-    padding-bottom: 4px;
-}
-
-li {
-    background: white;
-}
-
-li:nth-child(2n+0) {
-    background: rgba(194, 194, 194, 0.527);
-}
-
-.items {
-    list-style-type: none;
-}
-
-.todoItem {
-    line-height: 24px;
-    box-sizing: border-box;
-    width: 100%;
-    font-size: 20px;
-}
-
-.delete {
-    float: right;
-    background-color: red;
-    color: white;
-    height: 24px;
+    padding: 30px;
     text-align: center;
-    width: 0;
-    opacity: 0;
-    transition: ease .2s;
+    font-size: 35px;
+}
+.testContent{
+
+    
+    height: 110px;
+    font-size: 45px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 15px;
+    margin: 0;
 }
 
-.todoItem:hover .delete {
-    opacity: 1;
-    width: 35px;
+.typeArea{
+   padding: 15px;
+    
 }
 
-.done {
-    text-decoration: line-through;
-    color: gray;
+#input{
+    height: 50px;
+    font-size: 30px;
+    width: 90%;
+    padding: 0;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+    border: 1px solid rgba(0,0,0,0.3);
+}
+#btnStart{
+    padding: 2px;
+    width: 9%;
+    height: 50px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border: none;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
 }
 
+#input:disabled{
+    background-color: #fbbfc4;
+    border: 1px solid #ec6293;
+}
 
-
-@media only screen and (max-width: 600px) {
-    .container {
-        width: 100%;
-    }
+table{
+    margin: 20px auto;
+    background-color: #428bca;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+}
+th{
+    margin: 10px;
+    padding: 5px;
 }
