@@ -7,7 +7,7 @@ let charTyped = document.querySelector("#charTyped");
 let errors = document.querySelector("#errors");
 let wpm = document.querySelector("#wpm");
 let accuracy = document.querySelector("#accuracy");
-let time = 60;
+let time = 3;
 let running = false;
 let words1 = ["bee", "aromatic", "auspicious", "flight", "arrogant", "seal", "finger", "ethereal", "curly", "sheet", "wound", "bizarre", "division", "subdued", "military", "subsequent", "moldy", "dog", "fly", "deserve", "roll", "knee", "camp", "shave", "hospitable", "boiling", "bear", "obedient", "ad hoc", "drag", "heavenly", "loss", "fuel", "second-hand", "arch", "oatmeal", "shy", "stocking", "faint", "murder", "snakes", "madly", "ski", "rush", "drawer", "gifted", "phobic", "carpenter", "rambunctious", "angle", "ignore", "account", "bells", "motionless", "poke", "aspiring", "shelter", "attend", "dress", "striped", "fair", "delicious", "pour", "flawless", "pail", "underwear", "choke", "abject", "beg", "dinosaurs", "melted", "actually", "toe", "sidewalk", "skirt", "hang", "elegant", "voracious", "deranged", "learned", "drab", "lyrical", "tremendous", "pointless", "haircut", "second", "company", "clear", "limping", "range", "nimble", "achiever", "unequaled", "receptive", "hushed", "furry", "nondescript", "historical", "common", "dislike", "cut", "orange", "zealous", "fluttering", "overt", "wiry", "familiar", "badge", "wrestle", "nauseating", "government", "first", "disgusted", "outrageous", "writer", "caring", "prick", "creature", "alluring", "rule", "breath", "property", "babies", "name", "wakeful", "zoom", "superb", "melodic", "road", "fact", "argue", "grass", "damaged", "furniture", "poison", "plane", "delay", "scarce", "excellent", "field", "tax", "gaze", "rely", "flow", "books", "birthday", "frightening", "teeth", "demonic", "bumpy", "helpless", "gruesome", "educate", "sparkling", "wire", "form", "squeal", "acoustics", "excite", "straw", "highfalutin", "describe", "jobless", "position", "type", "cloudy", "manage", "mother", "frightened", "wren", "hall", "wet", "crook", "strengthen", "exotic", "absorbed", "feigned", "appear", "infamous", "mammoth", "wonderful", "irritate", "machine", "collect", "irate", "vessel", "hissing", "public", "impossible", "nice", "hellish", "soda", "far-flung", "solid", "obtainable", "claim", "ignorant", "white", "terrible", "plucky", "secretary", "prickly", "curious", "bouncy"];
 let words2 = ["obey", "meeting", "event", "agree", "mundane", "cream", "necessary", "roomy", "unsightly", "match", "verse", "romantic", "unit", "sneaky", "level", "poised", "secretive", "amused", "obsequious", "cheat", "swing", "bat", "miniature", "painstaking", "rabbit", "ghost", "best", "eggs", "sordid", "unkempt", "misty", "scrape", "squalid", "discover", "cooperative", "waggish", "morning", "tug", "stone", "juvenile", "neat", "nutritious", "suit", "notebook", "soup", "twig", "cakes", "early", "zany", "living", "depend", "nest", "preach", "mom", "giddy", "title", "filthy", "north", "note", "support", "damp", "labored", "ban", "guarantee", "battle", "chin", "authority", "itchy", "queen", "overjoyed", "alike", "gratis", "animal", "knowledge", "actor", "library", "rescue", "glue", "old", "vegetable", "wretched", "cuddly", "fat", "burly", "pack", "agonizing", "ambiguous", "locket", "broken", "steadfast", "shiver", "fit", "yell", "warn", "tray", "meddle", "wrong", "possess", "tail", "fold", "crazy", "wandering", "selection", "want", "comparison", "gullible", "cagey", "quartz", "humorous", "thoughtful", "snatch", "object", "foolish", "awake", "remarkable", "bath", "eight", "afraid", "brother", "burn", "leather", "expand", "liquid", "replace", "dirt", "mark", "men", "rude", "jaded", "sleepy", "hunt", "righteous", "poor", "button", "instruct", "sail", "veil", "innate", "enormous", "unique", "boy", "desire", "creepy", "cold", "ordinary", "deadpan", "expensive", "rose", "careless", "languid", "mixed", "mean", "happen", "thrill", "zip", "joke", "well-made", "comb", "business", "marked", "smelly", "husky", "care", "heal", "talk", "superficial", "ill-informed", "lame", "sense", "daffy", "smell", "pickle", "sprout", "snow", "shaggy", "alarm", "digestion", "copper", "blade", "spy", "tin", "hungry", "placid", "insect", "plastic", "party", "knife", "request", "cactus", "helpful", "mine", "determined", "defective", "basket", "exultant", "owe", "songs", "profit", "farm", "trick", "fireman", "town", "corn"];
@@ -22,6 +22,7 @@ let correct = false;
 let activeWord = "";
 let correctChar = 0;
 let wrongWords = 0;
+let wrongArr = [];
 
 
 input.addEventListener("keyup", function (key) {
@@ -52,12 +53,12 @@ input.addEventListener("keydown", function (key) {
             console.log("entered correct")
         } else{
             console.log("wrong");
+            recordWrong();
             wrongWords++;
         }
         changeActiveWord();
     }
 });
-
 
 function compareType() {
     if (input.value[charIndex] === displayedWords[indexCtr][charIndex]) {
@@ -72,27 +73,13 @@ function compareType() {
     }
 };
 
+function recordWrong(){
+    wrongArr.push(input.value);
+    console.log(wrongArr);
+    
+};
 
 
-
-
-function changeColor(){
-    if(correct){
-        activeWord.style.color = "black";
-    }else{
-        activeWord.style.color = "red";
-    }
-}
-
-
-function changeActiveWord(){
-    activeWord.style.fontWeight = "normal";
-    activeWord.style.display = "none";
-    activeWord = document.querySelector(`#word${indexCtr}`);
-    activeWord.style.opacity = 1;
-    activeWord.style.display = "inline";
-    activeWord.style.fontWeight = "900";
-}
 
 
 
@@ -128,6 +115,25 @@ function resetUI() {
     displayedWords.splice(0, displayedWords.length);
 }
 
+function changeColor(){
+    if(correct){
+        activeWord.style.color = "black";
+    }else{
+        activeWord.style.color = "red";
+    }
+}
+
+
+function changeActiveWord(){
+    activeWord.style.fontWeight = "normal";
+    activeWord.style.display = "none";
+    activeWord = document.querySelector(`#word${indexCtr}`);
+    activeWord.style.opacity = 1;
+    activeWord.style.display = "inline";
+    activeWord.style.fontWeight = "900";
+}
+
+
 function startTimer() {
     if(!running){
         running = true;
@@ -143,7 +149,7 @@ function startTimer() {
                 input.disabled = true;
                 clearInterval(timer);
                 calculateWPM();
-                time = 60;
+                time = 3;
                 running = false;
             }
         }, 1000);
