@@ -155,7 +155,7 @@ function startTimer() {
         }, 1000);
     }
 }
-
+//pleaseupdate
 function calculateWPM(){
     charTyped.textContent = String(correctChar);
     errors.textContent = String(wrongWords);
